@@ -16,13 +16,13 @@ phases:
       - npm --version
       - npm install express
       - npm install prom-client
-      - docker build -t containertesting .
-      - docker tag containertesting reftag   
+      - docker build -t $REPOSITORY_URL:latest .
+      - docker tag $REPOSITORY_URL:latest $REPOSITORY_URL:$IMAGE_TAG 
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing Docker image to AWS ECR .....
-      - docker push containertesting 
+      - docker push $REPOSITORY_URL:IMAGE_TAG
       - echo ECS Configuration....
       - echo Writing image definitions file...
       - CONTAINER_NAME=ecr-ecs-testing
