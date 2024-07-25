@@ -8,7 +8,7 @@ phases:
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 789934552839.dkr.ecr.ap-south-1.amazonaws.com
       - # Replace with this to your repository URI
       - REPOSITORY_URL=789934552839.dkr.ecr.ap-south-1.amazonaws.com/ecs-ecr-testing
-      - IMAGE_TAG=refTag
+      - IMAGE_TAG=reftag
   build:
     commands:
       - echo Build started on `date`
@@ -17,7 +17,7 @@ phases:
       - npm install express
       - npm install prom-client
       - docker build -t containertesting .
-      - docker tag containertesting refTag   
+      - docker tag containertesting reftag   
   post_build:
     commands:
       - echo Build completed on `date`
