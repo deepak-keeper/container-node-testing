@@ -17,7 +17,7 @@ phases:
       - npm install express
       - npm install prom-client
       - docker build -t $REPOSITORY_URL:latest .
-      - docker tag $REPOSITORY_URL:latest $REPOSITORY_URL:$IMAGE_TAG 
+      # - docker tag $REPOSITORY_URL:latest $REPOSITORY_URL 
   post_build:
     commands:
       - echo Build completed on `date`
