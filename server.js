@@ -7,6 +7,7 @@ const dbUrl = process.env.DATABASE_URL;
 const apiKey = process.env.API_KEY;
 console.log(dbUrl, apiKey);
 
+
 app.get('/', (req, res) => {
   res.send('Hello, Keeper!');
 });
