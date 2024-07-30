@@ -29,7 +29,7 @@ phases:
       - docker push $REPOSITORY_URL
       - echo ECS Configuration....
       - echo Writing image definitions file...
-      - CONTAINER_NAME=keeper-container
+      - CONTAINER_NAME=keeper-container-test
       - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME containertesting > imagedefinitions.json
       - cat imagedefinitions.json   
 artifacts:
