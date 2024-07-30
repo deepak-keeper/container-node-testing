@@ -1,8 +1,10 @@
 version: 0.2
 run-as: root
 
-secrets-manager:
-    SECRET_VALUE: "arn:aws:iam::789934552839:role/service-role/keeper-test-container"
+env:
+  secrets-manager:
+    ECR_LOGIN_STRING: "arn:aws:secretsmanager:ap-south-1:789934552839:secret:keeper-container-ecr-creds-LJ64pX:ECR_LOGIN_STRING"
+    ECR_REPO_URI: "arn:aws:secretsmanager:ap-south-1:789934552839:secret:keeper-container-ecr-creds-LJ64pX:ECR_REPO_URI"
 phases:
   pre_build:
     commands:
