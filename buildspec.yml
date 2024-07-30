@@ -10,7 +10,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR.......
       - eval $ECR_LOGIN_STRING
-      - # Replace with this to your repository URIs
+      - # Replace with this to your repository URIs n
       - REPOSITORY_URL=$ECR_REPO_URI
       - IMAGE_TAG=reftag
   build:
