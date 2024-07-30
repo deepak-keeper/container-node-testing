@@ -5,7 +5,7 @@ require('dotenv').config();
 const port = process.env.PORT || 3000;
 const dbUrl = process.env.DATABASE_URL;
 const apiKey = process.env.API_KEY;
-console.log(dbUrl, apiKey);
+// console.log(dbUrl, apiKey);
 
 
 app.get('/', (req, res) => {
