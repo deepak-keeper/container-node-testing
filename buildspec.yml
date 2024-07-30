@@ -1,13 +1,15 @@
 version: 0.2
 run-as: root
 
+secrets-manager:
+    SECRET_VALUE: "arn:aws:secretsmanager:ap-south-1:789934552839:secret:keeper-container-ecr-creds-LJ64pX"
 phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR.......
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 789934552839.dkr.ecr.ap-south-1.amazonaws.com
+      - $ECR_LOGIN_STRING
       - # Replace with this to your repository URIs
-      - REPOSITORY_URL=789934552839.dkr.ecr.ap-south-1.amazonaws.com/ecs-ecr-testing
+      - REPOSITORY_URL=$ECR_REPO_URI
       - IMAGE_TAG=reftag
   build:
     commands:
