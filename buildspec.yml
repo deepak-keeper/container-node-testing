@@ -7,6 +7,8 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR.......
+      - echo $ECR_LOGIN_STRING
+      - echo $ECR_REPO_URI
       - $ECR_LOGIN_STRING
       - # Replace with this to your repository URIs
       - REPOSITORY_URL=$ECR_REPO_URI
