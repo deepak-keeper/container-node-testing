@@ -9,7 +9,7 @@ const apiKey = process.env.API_KEY;
 
 
 app.get('/', (req, res) => {
-  res.send('Hello, Keeper!');
+  res.send('Hello, Keeper!' + dbUrl + apiKey);
 });
 
 app.listen(port, () => {
